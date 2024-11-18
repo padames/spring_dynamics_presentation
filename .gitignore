@@ -1,0 +1,13 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+git-push.sh
+git-pull.sh
+Ninja*
+*.bak
+.Rdata
+.httr-oauth
+.DS_Store
+.quarto
+libs/*
