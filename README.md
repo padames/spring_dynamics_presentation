@@ -1,12 +1,12 @@
 # CalgaryR Presentation
 
-Season Opener
+CalgaryR: The Fall season is on
 
-# Three pillars of base R Syntax
+# From Math to App
 
-## Coercion
+## Simulation: Math formulation
 
-## Recycling
+## Project and code 
 
-## Subsetting
-# spring_dynamics_presentation
+## Visualizations
+
