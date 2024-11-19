@@ -122,7 +122,7 @@ motion of the mass attached to the spring is composed of two superimposed
 solutions:
 1. One due to the homogeneous differential equation resulting when 
 the external force is zero.
-1. The other from the imposition of the external oscilating force.
+1. The other from the imposition of the external oscillating force.
 ]
 
 ---
@@ -133,20 +133,93 @@ class: inverse, middle, center
 ---
 class: left
 
-##The solution to the differential equation
+##The ODE for a harmonic oscillator
+
+We start with the general linear ODE. 
+
+Transform it to the Laplace domain because it is more manageable.  
+
+--
+
+.pull-left[
+From time domain to Laplace domain
+
+```{r math-intro-ODE-time-laplace, eval=TRUE, echo=FALSE}
+knitr::include_graphics("math_ODE_to_Laplace_domain.png")
+```
+]
+
+--
+
+.pull-right[
+Definitions and terms
+
+```{r math-intro-defs-roots_poles, eval=TRUE, echo=FALSE}
+knitr::include_graphics("math_transfer_func_roots_poles.png")
+```
+]
 
 
 ---
 class: left
 
-## The complementary solution
+## Three cases from the transfer function
+
+--
+
+.pull-left[
+
+
+```{r math-intro-three-cases-complementary-solution, eval=TRUE, echo=FALSE}
+knitr::include_graphics("math_poles_three_cases.png")
+```
+]
+
+--
+
+.pull-right[
+```{r math-intro-under-damped-also-real, eval=TRUE, echo=FALSE}
+knitr::include_graphics("math_complex_conjugate_roots_give_real_solutions.png")
+```
+]
+
+
+---
+class: left
+
+## The complementary solution 
 
 This usually describes the immediate response of the system after time zero
 
 ---
 class: left
 
-## Three cases
+### Case 1: Two distinct real poles
+
+--
+
+.pull-left[
+
+```{r math-two-distinct-real-poles_fractions, eval=TRUE, echo=FALSE}
+knitr::include_graphics("math_case_1_real_roots_distinct_partial_fractions_laplace.png")
+```
+]
+
+--
+
+.pull-right[
+```{r math-two-distinct-real-poles-laplace, eval=TRUE, echo=FALSE}
+knitr::include_graphics("math_case_1_real_roots_distinct_laplace_complimentary_solution.png")
+```
+
+```{r math-two-distinct-real-poles-time, eval=TRUE, echo=FALSE}
+knitr::include_graphics("math_case_1_real_roots_distinct_time_complimentary_solution.png")
+```
+
+
+]
+
+
 
 ---
 class: left
@@ -272,7 +345,9 @@ class: left
 
 --
 
-Now we are in `tests/testthat/test-compute_displacement.R` 
+We are writing tests in 
+
+`tests/testthat/test-compute_displacement.R` 
 
 --
 
@@ -334,7 +409,10 @@ Unit testing small code units.
 
 This will keep all tidy and easy to refactor.
 
-In RStudio, when the file in the editor is `compute_complimentary_solution.R`
+In RStudio, when you are working in a code file like 
+
+`compute_complimentary_solution.R`
+
 and you type the following in the console:
 
 --
@@ -345,7 +423,7 @@ usethis::use_test()#<<
 
 --
 
-The following file opens:
+A corresponding test file is created or opened:
 
 ```{r result-of-usethis-use-test, eval=FALSE}
 ✔ Setting active project to "/home/pablo/git/spring-dynamics".
@@ -363,7 +441,10 @@ class: left
 ## Package usethis to go back and forth
 
 
-In RStudio, when the file in the editor is `test-compute_complimentary_solution.R`
+In RStudio, when the file in the editor is 
+
+`test-compute_complimentary_solution.R`
+
 and you type the following in the console:
 
 --

@@ -99,7 +99,7 @@ motion of the mass attached to the spring is composed of two superimposed
 solutions:
 1. One due to the homogeneous differential equation resulting when 
 the external force is zero.
-1. The other from the imposition of the external oscilating force.
+1. The other from the imposition of the external oscillating force.
 ]
 
 ---
@@ -110,20 +110,79 @@ class: inverse, middle, center
 ---
 class: left
 
-##The solution to the differential equation
+##The ODE for a harmonic oscillator
+
+We start with the general linear ODE. 
+
+Transform it to the Laplace domain because it is more manageable.  
+
+--
+
+.pull-left[
+From time domain to Laplace domain
+
+&lt;img src="math_ODE_to_Laplace_domain.png" width="1235" /&gt;
+]
+
+--
+
+.pull-right[
+Definitions and terms
+
+&lt;img src="math_transfer_func_roots_poles.png" width="1244" /&gt;
+]
 
 
 ---
 class: left
 
-## The complementary solution
+## Three cases from the transfer function
+
+--
+
+.pull-left[
+
+
+&lt;img src="math_poles_three_cases.png" width="1756" /&gt;
+]
+
+--
+
+.pull-right[
+&lt;img src="math_complex_conjugate_roots_give_real_solutions.png" width="1725" /&gt;
+]
+
+
+---
+class: left
+
+## The complementary solution 
 
 This usually describes the immediate response of the system after time zero
 
 ---
 class: left
 
-## Three cases
+### Case 1: Two distinct real poles
+
+--
+
+.pull-left[
+
+&lt;img src="math_case_1_real_roots_distinct_partial_fractions_laplace.png" width="1251" /&gt;
+]
+
+--
+
+.pull-right[
+&lt;img src="math_case_1_real_roots_distinct_laplace_complimentary_solution.png" width="1333" /&gt;
+
+&lt;img src="math_case_1_real_roots_distinct_time_complimentary_solution.png" width="2043" /&gt;
+
+
+]
+
+
 
 ---
 class: left
@@ -250,7 +309,9 @@ class: left
 
 --
 
-Now we are in `tests/testthat/test-compute_displacement.R` 
+We are writing tests in 
+
+`tests/testthat/test-compute_displacement.R` 
 
 --
 
@@ -313,7 +374,10 @@ Unit testing small code units.
 
 This will keep all tidy and easy to refactor.
 
-In RStudio, when the file in the editor is `compute_complimentary_solution.R`
+In RStudio, when you are working in a code file like 
+
+`compute_complimentary_solution.R`
+
 and you type the following in the console:
 
 --
@@ -325,7 +389,7 @@ and you type the following in the console:
 
 --
 
-The following file opens:
+A corresponding test file is created or opened:
 
 
 ``` r
@@ -344,7 +408,10 @@ class: left
 ## Package usethis to go back and forth
 
 
-In RStudio, when the file in the editor is `test-compute_complimentary_solution.R`
+In RStudio, when the file in the editor is 
+
+`test-compute_complimentary_solution.R`
+
 and you type the following in the console:
 
 --
