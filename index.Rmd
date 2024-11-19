@@ -394,7 +394,7 @@ Here is where we separate components of the application.
 
 <img src="project_directories_via_tree.png"
      width="234px" height="260px"
-     style="position:absolute; right:500px; top:200px;">
+     style="position:absolute; right:500px; top:250px;">
 
 ---
 class: left
