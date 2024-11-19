@@ -25,7 +25,7 @@ class: center, middle, inverse, title-slide
 ### CalgaryR
 ]
 .date[
-### 2024/11/19 (updated: 2024-11-18)
+### 2024/11/19 (updated: 2024-11-19)
 ]
 
 ---
@@ -179,20 +179,142 @@ class: left
 
 &lt;img src="math_case_1_real_roots_distinct_time_complimentary_solution.png" width="2043" /&gt;
 
+This is the over-damped case. The transient solution quickly disappears.
 
 ]
-
 
 
 ---
 class: left
 
-## The particular solution
+### Case 2: Two repeated real poles
 
-This is the steady state solution of the system.
+--
+
+.pull-left[
+
+&lt;img src="math_case_2_real_roots_repeated_partial_fractions_laplace_ABC.png" width="1095" /&gt;
+
+]
+
+--
+
+.pull-right[
+&lt;img src="math_case_2_real_roots_repeated_partial_fractions_laplace_D.png" width="1092" /&gt;
+
+Now we substitute in to the Laplace solution.
+]
 
 
+---
+class: left
 
+### Case 2: Two repeated real poles (Cont.)
+
+--
+
+.pull-left[
+
+&lt;img src="math_case_2_real_roots_repeated_laplace_complimentary_solution.png" width="1067" /&gt;
+This is the critically-damped system.
+
+Only happens under special conditions and it is hard to solve.
+
+]
+
+--
+
+.pull-right[
+
+&lt;img src="math_case_2_real_roots_repeated_time_complimentary_solution.png" width="1375" /&gt;
+]
+
+
+---
+class: left
+
+### Case 3: Two complex conjugate poles 
+
+--
+
+.pull-left[
+
+&lt;img src="math_case_3_recap_partial_fractions_complex_conjugate_roots.png" width="1281" /&gt;
+]
+
+--
+
+.pull-right[
+
+&lt;img src="math_case_3_replacing_complex_conjugate_roots_in_proposed_solution.png" width="1139" /&gt;
+We know the shape of this solution from Case 1, only now the roots are
+complex conjugates.
+
+]
+
+---
+class: left
+
+### Case 3: Two complex conjugate poles (Cont.)
+
+--
+
+.pull-left[
+
+&lt;img src="math_case_3_transforming_proposed_solution_q1_q2.png" width="1139" /&gt;
+]
+
+--
+
+.pull-right[
+
+&lt;img src="math_case_3_q1_q2_must_be_complex_conjugates_also.png" width="1141" /&gt;
+The constants q1 and q2 must also be complex conjugates.
+
+We could have just left a single constant q in the formula.
+]
+
+---
+class: left
+
+### Case 3: The complimentary solution (Cont.)
+
+--
+
+.pull-left[
+
+&lt;img src="math_case_3_solving_for_C_once_because_D_derived.png" width="1533" /&gt;
+]
+
+--
+
+.pull-right[
+
+&lt;img src="math_case_3_replacing_C_in_the_complimentary_time_solution.png" width="2043" /&gt;
+
+This effort allows us to calculate the complimentary solution in  the time domain given the known real coefficients of the ODE.
+
+This is referred to as the under-damped harmonic oscillator.
+
+]
+
+---
+class: left
+
+#### The particular solution
+
+.pull-left[
+&lt;img src="math_particular_solution_steady_state.png" width="1459" /&gt;
+]
+
+.pull-right[
+It comes from the external oscillating force. 
+
+It never stops, that is why it is the steady state solution.
+
+It is added to the complimentary solution which always tends to rest. 
+
+]
 
 ---
 class: inverse, middle, center
@@ -364,6 +486,9 @@ Make small functions that do one thing only.
 And do it well.
 
 [Live demo, changing a function name]
+
+Code in https://github.com/padames/lumped-model-dynamics
+
 
 ---
 class: left
@@ -733,7 +858,7 @@ Using the library `shiny`.
 [live demo]
 
 
-
+App in: https://padames-shiny.shinyapps.io/spring-dynamics/
 
 ---
 

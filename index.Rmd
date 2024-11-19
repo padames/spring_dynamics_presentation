@@ -216,20 +216,164 @@ knitr::include_graphics("math_case_1_real_roots_distinct_laplace_complimentary_s
 knitr::include_graphics("math_case_1_real_roots_distinct_time_complimentary_solution.png")
 ```
 
+This is the over-damped case. The transient solution quickly disappears.
 
 ]
-
 
 
 ---
 class: left
 
-## The particular solution
+### Case 2: Two repeated real poles
 
-This is the steady state solution of the system.
+--
+
+.pull-left[
+
+```{r math-two-repeated-real-poles-fractions-ABC, eval=TRUE, echo=FALSE}
+knitr::include_graphics("math_case_2_real_roots_repeated_partial_fractions_laplace_ABC.png")
+```
+
+]
+
+--
+
+.pull-right[
+```{r math-two-repeated-real-poles-freactions-D, eval=TRUE, echo=FALSE}
+knitr::include_graphics("math_case_2_real_roots_repeated_partial_fractions_laplace_D.png")
+```
+
+Now we substitute in to the Laplace solution.
+]
 
 
+---
+class: left
 
+### Case 2: Two repeated real poles (Cont.)
+
+--
+
+.pull-left[
+
+```{r math-two-repeated-real-poles-laplace, eval=TRUE, echo=FALSE}
+knitr::include_graphics("math_case_2_real_roots_repeated_laplace_complimentary_solution.png")
+```
+This is the critically-damped system.
+
+Only happens under special conditions and it is hard to solve.
+
+]
+
+--
+
+.pull-right[
+
+```{r math-two-repeated-real-poles-time, eval=TRUE, echo=FALSE}
+knitr::include_graphics("math_case_2_real_roots_repeated_time_complimentary_solution.png")
+```
+]
+
+
+---
+class: left
+
+### Case 3: Two complex conjugate poles 
+
+--
+
+.pull-left[
+
+```{r math-two-complex-conjugate-fractions, eval=TRUE, echo=FALSE}
+knitr::include_graphics("math_case_3_recap_partial_fractions_complex_conjugate_roots.png")
+```
+]
+
+--
+
+.pull-right[
+
+```{r math-two-complex-conjugate-fractions-solution-with-complex-conj, eval=TRUE, echo=FALSE}
+knitr::include_graphics("math_case_3_replacing_complex_conjugate_roots_in_proposed_solution.png")
+```
+We know the shape of this solution from Case 1, only now the roots are
+complex conjugates.
+
+]
+
+---
+class: left
+
+### Case 3: Two complex conjugate poles (Cont.)
+
+--
+
+.pull-left[
+
+```{r math-two-complex-conjugate-replacing-values-q1-q2, eval=TRUE, echo=FALSE}
+knitr::include_graphics("math_case_3_transforming_proposed_solution_q1_q2.png")
+```
+]
+
+--
+
+.pull-right[
+
+```{r math-two-complex-conjugate-q1-q2-also-must-be-complex-conj, eval=TRUE, echo=FALSE}
+knitr::include_graphics("math_case_3_q1_q2_must_be_complex_conjugates_also.png")
+```
+The constants q1 and q2 must also be complex conjugates.
+
+We could have just left a single constant q in the formula.
+]
+
+---
+class: left
+
+### Case 3: The complimentary solution (Cont.)
+
+--
+
+.pull-left[
+
+```{r math-two-complex-conjugate-solving-for-C, eval=TRUE, echo=FALSE}
+knitr::include_graphics("math_case_3_solving_for_C_once_because_D_derived.png")
+```
+]
+
+--
+
+.pull-right[
+
+```{r math-two-complex-conjugate-, eval=TRUE, echo=FALSE}
+knitr::include_graphics("math_case_3_replacing_C_in_the_complimentary_time_solution.png")
+```
+
+This effort allows us to calculate the complimentary solution in  the time domain given the known real coefficients of the ODE.
+
+This is referred to as the under-damped harmonic oscillator.
+
+]
+
+---
+class: left
+
+#### The particular solution
+
+.pull-left[
+```{r math-particular-solution, eval=TRUE, echo=FALSE}
+knitr::include_graphics("math_particular_solution_steady_state.png")
+```
+]
+
+.pull-right[
+It comes from the external oscillating force. 
+
+It never stops, that is why it is the steady state solution.
+
+It is added to the complimentary solution which always tends to rest. 
+
+]
 
 ---
 class: inverse, middle, center
@@ -399,6 +543,9 @@ Make small functions that do one thing only.
 And do it well.
 
 [Live demo, changing a function name]
+
+Code in https://github.com/padames/lumped-model-dynamics
+
 
 ---
 class: left
@@ -754,7 +901,7 @@ Using the library `shiny`.
 [live demo]
 
 
-
+App in: https://padames-shiny.shinyapps.io/spring-dynamics/
 
 ---
 
